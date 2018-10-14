@@ -1,4 +1,6 @@
-import { getTodos, partialUpdateTodo, deleteTodo, createTodo } from '../../networking';
+import {
+  getTodos, partialUpdateTodo, deleteTodo, createTodo, updateTodo,
+} from '../../networking';
 import { triggerError } from './errors';
 
 export const addTodo = todo => ({
@@ -12,6 +14,19 @@ export const startAddTodo = title => dispatch => createTodo({ userId: 1, title, 
     dispatch(addTodo(data));
   })
   .catch(error => dispatch(triggerError(error)));
+
+export const editTodo = payload => ({
+  type: 'EDIT_TODO',
+  payload,
+});
+
+export const startEditTodo = payload => dispatch => updateTodo(payload)
+  .then(({ data }) => {
+    dispatch(editTodo(data));
+  })
+  .catch((error) => {
+    triggerError(error);
+  });
 
 export const removeTodo = id => ({
   type: 'DELETE_TODO',

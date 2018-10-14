@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
 });
 
 class TodoDetail extends Component {
+  static navigationOptions = () => ({
+    title: 'Todo',
+  });
+
   constructor(props) {
     super(props);
     this._handleEditTodo = this._handleEditTodo.bind(this);
@@ -37,7 +41,11 @@ class TodoDetail extends Component {
             Status:
             {navigation.state.params.item.completed ? 'Done' : 'Uncompleted'}
           </Text>
-          <Button title="Edit todo" style={{ flex: 1, height: 30 }} />
+          <Button
+            onPress={this._handleEditTodo}
+            title="Edit todo"
+            style={{ flex: 1, height: 30 }}
+          />
         </View>
       </Root>
     );

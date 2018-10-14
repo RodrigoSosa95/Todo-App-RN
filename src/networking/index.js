@@ -7,6 +7,6 @@ export const instance = axios.create({
 export const getTodos = () => instance.get();
 export const getTodo = id => instance.get(`${id}`);
 export const createTodo = payload => instance.post('', payload);
-export const updateTodo = (id, payload) => instance.put(`${id}`, payload);
+export const updateTodo = payload => instance.put(`${payload.id}`, payload);
 export const partialUpdateTodo = (id, payload) => instance.patch(`${id}`, payload);
 export const deleteTodo = id => instance.delete(`${id}`);

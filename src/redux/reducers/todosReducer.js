@@ -12,6 +12,15 @@ export default (state = initialState, action) => {
       return {
         todos: [...state.todos, action.todo],
       };
+    case 'EDIT_TODO':
+      return {
+        todos: state.todos.map((todo) => {
+          if (todo.id === action.payload.id) {
+            return action.payload;
+          }
+          return todo;
+        }),
+      };
     case 'DELETE_TODO':
       return {
         todos: state.todos.filter(todo => todo.id !== action.id),

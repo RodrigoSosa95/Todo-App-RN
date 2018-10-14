@@ -9,7 +9,7 @@ const Container = styled.View`
   border-radius: 5;
 `;
 
-const Input = styled.TextInput`
+export const Input = styled.TextInput`
   max-height: 30;
   border-bottom-width: 0.5px;
   border-bottom-color: gray;
