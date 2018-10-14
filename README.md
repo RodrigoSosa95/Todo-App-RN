@@ -9,7 +9,7 @@ To run the application the application properly it is recommended to have the fo
 
 You must also bear in mind to have your machine properly setup to develop react native apps.
 
-To run the application just clone the project and inside of the project folder in your machine enter de command `react-native run-ios` or `react-native run-android` I would suggest to run the command `react-native start --reset-cache` to run the bundler and then execute the previous commands mentioned 
+To run the application just clone the project and inside of the project folder in your machine enter the command `react-native run-ios` or `react-native run-android` I would suggest to run the command `react-native start --reset-cache` to run the bundler and then execute the previous commands mentioned 
 
 Once launched the app should be running on your device or simulator
 
