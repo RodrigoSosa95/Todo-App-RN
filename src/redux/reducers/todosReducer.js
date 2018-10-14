@@ -12,6 +12,20 @@ export default (state = initialState, action) => {
       return {
         todos: [...state.todos, action.todo],
       };
+    case 'DELETE_TODO':
+      return {
+        todos: state.todos.filter(todo => todo.id !== action.id),
+      };
+    case 'TOGGLE_TODO':
+      return {
+        todos: state.todos.map((todo) => {
+          if (todo.id === action.id) {
+            todo.completed = !todo.completed;
+            return todo;
+          }
+          return todo;
+        }),
+      };
     default:
       return state;
   }

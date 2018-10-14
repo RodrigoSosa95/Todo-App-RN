@@ -3,4 +3,8 @@ import thunk from 'redux-thunk';
 import todosReducer from './reducers/todosReducer';
 import errorsReducer from './reducers/errorsReducer';
 
-export default () => createStore(combineReducers({ todosReducer, errorsReducer }), applyMiddleware(thunk));
+export default initialState => createStore(
+  combineReducers({ todosReducer, errorsReducer }),
+  initialState,
+  applyMiddleware(thunk),
+);
